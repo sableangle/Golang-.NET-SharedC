@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <Configurations>Debug;Release;CodeDoc</Configurations>
   </PropertyGroup>
 
@@ -29,7 +29,9 @@
   </PropertyGroup>
 
   <Target Name="GoBuild" AfterTargets="BeforeCompile">
-    <Exec Command="powershell -file &quot;$(SolutionDir)Go\build-all.ps1&quot; -solutionDir $(SolutionDir) -outDir $(OutDir) -buildConfig $(Configuration)" />
+    <!-- <Exec Command="sh $(SolutionDir)Go\build-all.ps1 -solutionDir $(SolutionDir) -outDir $(OutDir) -buildConfig $(Configuration)" /> -->
+    <Exec Command="sh $(SolutionDir)Go/build-all.sh $(SolutionDir) $(OutDir) $(Configuration)" />
+
   </Target>
 
 </Project>
