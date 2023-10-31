@@ -57,8 +57,8 @@ echo "$LOG_PATH"
 cd $BUILD_GOROOT
 chmod +x ./build-helloworld.sh 
 chmod +x ./build-math.sh 
-# ./build-helloworld.sh $BUILD_GOROOT $BUILD_PATH/macos $LOG_PATH $buildConfig "darwin" "arm64"
-# ./build-math.sh $BUILD_GOROOT $BUILD_PATH/macos $LOG_PATH $buildConfig "darwin" "arm64"
+./build-helloworld.sh $BUILD_GOROOT $BUILD_PATH/macos $LOG_PATH $buildConfig "darwin" "arm64"
+./build-math.sh $BUILD_GOROOT $BUILD_PATH/macos $LOG_PATH $buildConfig "darwin" "arm64"
 
 # change env
 export CC="x86_64-w64-mingw32-gcc" 
@@ -71,8 +71,4 @@ export CXX=x86_64-linux-musl-g++
 ./build-helloworld.sh $BUILD_GOROOT $BUILD_PATH/linux $LOG_PATH $buildConfig "linux" "amd64"
 ./build-math.sh $BUILD_GOROOT $BUILD_PATH/linux $LOG_PATH $buildConfig "linux" "amd64"
 
-# bash "${BUILD_GOROOT}/build-helloworld.sh $BUILD_GOROOT $BUILD_PATH/macos $LOG_PATH $buildConfig darwin arm64"
-
-# ./build-math.sh $BUILD_GOROOT $BUILD_PATH/macos $LOG_PATH $buildConfig "darwin" "arm64"
-# ./build-math.sh "$BUILD_GOROOT" "$BUILD_PATH" "$LOG_PATH" "$buildConfig"
 
